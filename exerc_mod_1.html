@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Curso JS Rocketseat</title>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+
+			</div>
+		</div>
+	</div>
+	<script>
+		// 1º Exercício
+		var endereco = {
+			rua: 'Rua dos pinheiros',
+			numero: 1293,
+			bairro: 'Centro', 
+			cidade: 'São Paulo',
+			uf: 'SP'
+		};
+		function exibirEndereco() {
+			return 'O usuário mora em ' + endereco.cidade + ' / ' + endereco.uf + ', no bairro ' + endereco.bairro + ' na rua "' + endereco.rua + '" com nº ' + endereco.numero;
+		}
+		console.log(exibirEndereco());
+
+		// 2º Exercício
+		function pares(x, y){
+			for(i = x;i <= y; i++){
+				if(i % 2 == 0){
+					console.log(i);
+				}
+			}
+		}
+		pares(32, 321);
+
+		// 3º Exercício
+		var skills = ['Javascript', 'ReactJS', 'React Native'];
+		function temHabilidade(skills){
+			if(skills.indexOf('Javascript') >= 0){
+				return true;
+			} else {
+				return false;
+			}
+		}
+		/*
+		versão do professor
+		function temHabilidade(skills) {
+		  return skills.indexOf("Javascript") !== -1;
+		}
+		*/
+		console.log(temHabilidade(skills));
+
+		// 4º Exercício
+		function experiencia(anos){
+			if(anos <= 0.99){
+				return 'Iniciante';
+			}
+			else if(anos <= 2.99){
+				return 'Intermediário';
+			}
+			else if(anos <= 5.99){
+				return 'Avançado';
+			}
+			else if(anos <= 7){
+				return 'Jedi Master';
+			}
+		}
+		var anosEstudos = 7;
+		console.log(experiencia(anosEstudos));
+
+		// 5º Exercício
+		var usuarios = [
+		  {
+		    nome: 'Diego',
+		    habilidades: ['Javascript', 'ReactJS', 'Redux']
+		  },
+		  {
+		    nome: 'Gabriel',
+		    habilidades: ['VueJS', 'Ruby on Rails', 'Elixir']
+		  }
+		];
+		function resultado(){
+			var habDiego = [];
+			var habGabriel = [];
+			for(let value of usuarios[0].habilidades){
+				habDiego.push(value);
+				// console.log(typeof hab);
+				// console.log(hab);
+			}
+			for(let value of usuarios[1].habilidades){
+				habGabriel.push(value);
+			}
+			console.log('O Diego possui as habilidades: ' + habDiego.join(', '));
+			console.log('O Gabriel possui as habilidades: ' + habGabriel.join(', '));
+		}
+		resultado();
+
+		function exibeHabilidades(usuarios) {
+		  for (usuario of usuarios) {
+		    console.log(
+		      "O " +
+		        usuario.nome +
+		        " possui as habilidades: " +
+		        usuario.habilidades.join(", ")
+		    );
+		  }
+		}
+		exibeHabilidades(usuarios);
+
+		// 6º Exercício
+		function countdown(i) {
+			i *= 60;
+			while(i >= 0){
+				var d = new Date(2018, 10, 6, 0, 0, i);
+		    var h = d.getHours();
+		    var m = d.getMinutes();
+		    var s = d.getSeconds();
+				console.log(h + ":" + m + ":" + s);
+				i--;
+			}
+		}
+
+		setInterval(countdown(70), 1000);
+	</script>
+</body>
+</html>

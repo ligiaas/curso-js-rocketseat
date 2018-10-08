@@ -1,0 +1,12 @@
+No módulo 1:
+1º e 2º a resolução estavam iguais.
+3º houve uma diferença, o do professor estava mais limpo o código, mesmo assim o meu ainda estava correto.
+4º a resolução estava igual porém eu levei em consideração valores reais e não inteiros, o que também não é errado, eu acho.
+5º houve uma grande diferença de resolução, fiquei espantada em quanta volta eu dei pra chegar no mesmo resultado. A minha conclusão é que eu não entendi o conceito de for(argument of arguments). Esse é um ponto que eu preciso reforçar mais, pois usamos muito em nossas aplicações, reconheço essa síntaxe do componente select.
+6º Pesquisei sobre como usar a classe Date do JS, apesar da gente ter trabalhado com ela na quinta-feira, não lembrava de como usá-la mas consegui fazer o exercício. Não tem resolução dele.
+
+No módulo 2:
+1º As Resoluções estavam diferentes porém acho que a minha foi mais objetiva e dentro do enúnciado.
+2º Tive um pouco de dificuldade de como passar a nova cor para o backgroundColor no evento de mouse. Essa eu tive que ver como o prof fez.
+3º novamente o meu for ficou diferente da resolução do instrutor porém dessa vez não o vi como uma má resolução.
+4º ficou bem diferente e a solução do professor mais limpa e objetiva que a minha, nesse ponto o for(argument of arguments) fez diferença.
