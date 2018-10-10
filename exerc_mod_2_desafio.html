@@ -9,6 +9,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12" id="content">
+				
+			</div>
+			<div class="col-md-12">
 				<button onClick="orderingName()">Ordenar por nome</button>
 				<button onClick="orderingAge()">Ordenar por idade</button>
 
@@ -63,12 +66,24 @@
 		for(user of users){
 			addList(user);
 			ulElement.appendChild(addList(user));
-			var u = [addList(user)];
+			// var str = u.substr();
+			// console.log(u);
+
 		}
 		divElement.appendChild(ulElement);
 
 		function orderingName(){
-			console.log(u);
+			var lista = [];
+			for(user of users){
+				lista.push(addList(user).textContent);
+			}
+			lista.sort();
+			var i = 0;
+			var txt = document.querySelectorAll('li');
+			txt.textContent = lista;
+			
+			// addList(user).textContent = lista;
+			console.log(lista);
 		}
 
 
