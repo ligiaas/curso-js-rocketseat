@@ -43,3 +43,8 @@ function deleteTodo(pos){
 	todos.splice(pos, 1) //remove uma qtd de items de um array baseado na posição foi passada
 	renderTodos();
 }
+
+function saveToStorage(){
+	// JSON = JavaScriptObjectNotation parece um obj mas é uma string
+	localStorage.setItem('list_todo', JSON.stringfy(todos)) //localStorage é uma var global do js
+}
