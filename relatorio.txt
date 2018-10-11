@@ -10,3 +10,5 @@ No módulo 2:
 2º Tive um pouco de dificuldade de como passar a nova cor para o backgroundColor no evento de mouse. Essa eu tive que ver como o prof fez.
 3º novamente o meu for ficou diferente da resolução do instrutor porém dessa vez não o vi como uma má resolução.
 4º ficou bem diferente e a solução do professor mais limpa e objetiva que a minha, nesse ponto o for(argument of arguments) fez diferença.
+
+o 3º era pra verificar se tinha um item num array. A forma que eu fiz estava certa. 

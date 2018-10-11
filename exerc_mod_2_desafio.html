@@ -9,15 +9,15 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12" id="content">
-				
 			</div>
 			<div class="col-md-12">
 				<button onClick="orderingName()">Ordenar por nome</button>
 				<button onClick="orderingAge()">Ordenar por idade</button>
 
-				<button onClick="">Exibir apenas homens</button>
-				<button onClick="">Exibir apenas mulheres</button>
-				<button onClick="">Exibir todos</button>
+				<button onClick="filterBy('M')">Exibir apenas homens</button>
+				<button onClick="filterBy('F')">Exibir apenas mulheres</button>
+				<button onClick="printAll()">Exibir todos</button>
+				<button onClick="clearOrdering()">Limpar ordenação</button>
 			</div>
 		</div>
 	</div>
@@ -28,26 +28,34 @@
 		    nome: 'José',
 		    idade: 30,
 		    sexo: 'M',
-		  },
-		  {
+		  },{
 		    nome: 'Gabriela',
 		    idade: 18,
 		    sexo: 'F',
-		  },
-		  {
+		  },{
 		    nome: 'Diego',
 		    idade: 23,
 		    sexo: 'M',
-		  },
-		  {
+		  },{
 		    nome: 'Maria',
 		    idade: 27,
 		    sexo: 'F',
-				  }
+		  },{
+		    nome: 'Elis',
+		    idade: 47,
+		    sexo: 'F',
+		  },{
+		    nome: 'Pedro',
+		    idade: 16,
+		    sexo: 'M',
+		  }
 		];
 
-		var divElement = document.querySelector('#content');
-		var ulElement = document.createElement('ul');
+		var showList = [];
+
+		var ordering = null;
+
+		var filter = null;
 
 		function addList(user) {
 			if(user.sexo == 'M'){
@@ -61,34 +69,73 @@
 			var liElement = document.createElement('li');
 			liElement.textContent = text;
 			return liElement;
+		}	
+
+		function reWrite(items){
+			document.getElementById('content').innerHTML = "";
+			var divElement = document.querySelector('#content');
+			var ulElement = document.createElement('ul');
+			for(item of items){
+				ulElement.appendChild(addList(item));
+			}
+			divElement.appendChild(ulElement);
 		}
 
-		for(user of users){
-			addList(user);
-			ulElement.appendChild(addList(user));
-			// var str = u.substr();
-			// console.log(u);
-
+		function printAll(){
+			showList = [...users];
+			filter = null;
+			if(ordering){
+				orderingBy(showList, ordering)
+			} else {
+				reWrite(showList);
+			}
 		}
-		divElement.appendChild(ulElement);
+		
+		function orderingBy(lista, field){
+			lista.sort(function (a, b) {
+              if (a[field] > b[field]) {
+                return 1;
+              }
+              return -1;
+            });
+            reWrite(lista);
+		}
+
+		function clearOrdering(){
+			showList = [...users];
+			ordering = null;
+			if(filter){
+				filterBy(filter);
+			} else {
+				reWrite(showList);
+			}
+		}
 
 		function orderingName(){
-			var lista = [];
-			for(user of users){
-				lista.push(addList(user).textContent);
-			}
-			lista.sort();
-			var i = 0;
-			var txt = document.querySelectorAll('li');
-			txt.textContent = lista;
-			
-			// addList(user).textContent = lista;
-			console.log(lista);
+			ordering = 'nome';
+			var lista = [...showList];
+			orderingBy(lista, ordering);
 		}
 
+		function orderingAge(){
+			ordering = 'idade';
+			var lista = [...showList];
+			orderingBy(lista, ordering);
+		}
 
+		function filterBy(gen){
+			filter = gen;
+			showList = users.filter(function(item){
+				return (item.sexo == gen);
+			});
+			if(ordering){
+				orderingBy(showList, ordering)
+			} else {
+				reWrite(showList);
+			}
+		}
 
-		
+		printAll();
 	</script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
