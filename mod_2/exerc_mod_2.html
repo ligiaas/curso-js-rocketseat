@@ -10,7 +10,7 @@
 		<div class="row">
 			<div class="col-md-12" id="app">
 				<div class="form-group">
-					<input type="text" id="add" class="form-control" autofucus>
+					<input type="text" id="add" class="form-control" autofocus>
 					<button onclick="adicionar()">Add Lista</button>
 				</div>
 				<button id="btn">Add Quadrado</button>
@@ -45,7 +45,7 @@
 
 		// exercício 3
 		var nomes = ['Diego', 'Gabriel', 'Lucas'];
-		var elApp = document.querySelector('.form-group');
+		var div = document.querySelector('.form-group');
 		var ul = document.createElement('ul');
 
 		for(i = 0;i < 3; i++){
@@ -53,7 +53,7 @@
 			ul.appendChild(li);
 			li.textContent = nomes[i];
 		}
-		elApp.appendChild(ul);
+		div.appendChild(ul);
 
 		// exercício 4
 		var ipt = document.getElementById('add');
@@ -88,6 +88,7 @@
 		  }
 		];
 
+		
 	</script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
