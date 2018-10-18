@@ -1,6 +1,10 @@
 var divEl = document.querySelector('#repos');
 var ulEl = document.createElement('ul');
+
 function send(){
+	var pEl = document.createElement('p');
+	pEl.textContent = 'Carregando...';
+	divEl.appendChild(pEl);
 	var iptEl = document.getElementById('idd');
 	var val = iptEl.value;
 	var user = val.toLowerCase();
@@ -18,9 +22,9 @@ function send(){
 		divEl.appendChild(ulEl);
 		})
 		.catch(function(error){
-			if(status === 404){
+			if(error.response.status === 404){
 				var el = document.createElement('h3');
-				var text = document.createTextNode('Usuário não encontrado!');
+				var text = document.createTextNode(error.response.status + ' ' + error.response.data.message + ' Usuário não encontrado!');
 				el.appendChild(text);
 				divEl.appendChild(el);
 			}
